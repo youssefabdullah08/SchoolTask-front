@@ -1,0 +1,53 @@
+<nav class="bg-white shadow-lg">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center">
+        <a href="#" class="text-xl font-bold text-gray-800">Auth System</a>
+      </div>
+      <div class="hidden md:flex items-center space-x-4">
+        <a routerLink="/login" routerLinkActive="text-blue-600" 
+           class="text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
+          Login
+        </a>
+        <a routerLink="/register" routerLinkActive="text-blue-600"
+           class="text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
+          Register
+        </a>
+        <a routerLink="/forgot-password" routerLinkActive="text-blue-600"
+           class="text-gray-600 hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium">
+          Forgot Password
+        </a>
+      </div>
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button class="mobile-menu-button outline-none" (click)="toggleMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden" [ngClass]="{'block': isMobileMenuOpen}">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a routerLink="/login" routerLinkActive="bg-blue-500 text-white"
+           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-500 hover:text-white">
+          Login
+        </a>
+        <a routerLink="/register" routerLinkActive="bg-blue-500 text-white"
+           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-500 hover:text-white">
+          Register
+        </a>
+        <a routerLink="/forgot-password" routerLinkActive="bg-blue-500 text-white"
+           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-blue-500 hover:text-white">
+          Forgot Password
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mx-auto">
+<router-outlet></router-outlet>
+</div>
+
